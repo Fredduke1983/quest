@@ -1,0 +1,62 @@
+body {
+    background-color: #111;
+    color: #eee;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 600px;
+    height: 800px;
+    background-image: url('../images/Intro.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#intro {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    margin-bottom: 50px;
+
+}
+
+#intro button {
+    border-radius: 10px;
+    color: white;
+    transition: .4s linear;
+    background: #28035c;
+}
+
+#intro button:hover {
+    box-shadow: #3e72ef 0 0px 0px 40px inset;
+    background: #08019d;
+}
+
+
+button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f44336;
+}
