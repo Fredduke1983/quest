@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Rubik+Glitch&display=swap" rel="stylesheet');
+
 body {
     background-color: #111;
     color: #eee;
@@ -9,19 +11,22 @@ body {
     height: 100vh;
 }
 
-#game-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+button {
+    width: 100%;
+    background-color: #444;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 5px 0;
+    cursor: pointer;
+    box-shadow: #9f9f9f 0 0px 8px 3px;
+    transition: 0.3s ease;
+}
 
-    width: 600px;
-    height: 800px;
-    background-image: url('../images/Intro.png');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
+button:hover {
+    box-shadow: #9f9f9f 0 0px 1px 1px;
+    background-color: #409607;
+    border-radius: 15px;
 }
 
 #intro {
@@ -30,33 +35,91 @@ body {
     flex-direction: column;
     text-align: center;
     gap: 15px;
-    margin-bottom: 50px;
-
+    margin-bottom: 40px;
+    padding-bottom: 80px;
 }
 
 #intro button {
-    border-radius: 10px;
-    color: white;
-    transition: .4s linear;
-    background: #28035c;
-}
-
-#intro button:hover {
-    box-shadow: #3e72ef 0 0px 0px 40px inset;
-    background: #08019d;
-}
-
-
-button {
-    background-color: #444;
-    color: white;
+    background: none;
     border: none;
-    padding: 10px 20px;
-    margin: 5px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    box-shadow: none;
+    transition: .3s ease;
 }
 
-button:hover {
-    background-color: #f44336;
+.start-text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    font-family: 'Rubik Glitch', cursive;
+    color: #ffa600;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px #00000090;
+    transition: .3s linear;
+}
+
+.start-text:hover {
+    font-size: 22px;
+    text-shadow: 2px 4px 6px #00000090;
+}
+
+.end-text {
+    text-align: center;
+    font-family: 'Rubik Glitch', cursive;
+    color: #d70505;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    width: 600px;
+    height: 800px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.user-info {
+    padding-left: 20px;
+    padding-top: 25px;
+
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+
+    font-family: "Pangolin", cursive;
+    font-size: 28px;
+}
+
+.user-info span {
+    color: #dee0eb;
+}
+
+
+.quest {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+}
+
+.text-container {
+    color: #090055;
+    border-radius: 10px;
+    background-color: #ffffffb5;
+    margin: 12px 35px;
+}
+
+.game-text {
+    padding: 8px;
 }

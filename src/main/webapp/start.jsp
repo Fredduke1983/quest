@@ -4,19 +4,19 @@
 <%@ page import="java.util.Map" %>
 <html>
 <head>
-  <title>Квест — Крок</title>
+    <title>Квест — Крок</title>
 </head>
 <body>
 <%
-  if (session == null || session.getAttribute("username") == null) {
-    response.sendRedirect("index.jsp");
-    return;
-  }
+    if (session == null || session.getAttribute("username") == null) {
+        response.sendRedirect("index.jsp");
+        return;
+    }
 
-  Integer step = (Integer) session.getAttribute("step");
+    Integer step = (Integer) session.getAttribute("step");
 
-  Map<Integer, Question> questions = Data.getQuestions();
-  Question current = questions.get(step);
+    Map<Integer, Question> questions = Data.getQuestions(session.getAttribute("username"));
+    Question current = questions.get(step);
 %>
 
 <h2>Привіт, <%= session.getAttribute("username") %>!</h2>
@@ -25,12 +25,12 @@
 
 <% if (!current.getOptions().isEmpty()) { %>
 <form action="game" method="post">
-  <% for (Map.Entry<String, Integer> entry : current.getOptions().entrySet()) { %>
-  <button type="submit" name="answer" value="<%= entry.getKey() %>">
-    <%= entry.getKey() %>
-  </button>
-  <br/>
-  <% } %>
+    <% for (Map.Entry<String, Integer> entry : current.getOptions().entrySet()) { %>
+    <button type="submit" name="answer" value="<%= entry.getKey() %>">
+        <%= entry.getKey() %>
+    </button>
+    <br/>
+    <% } %>
 </form>
 <% } else { %>
 <p><strong>Кінець гри!</strong></p>

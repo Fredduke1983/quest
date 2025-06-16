@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: quest
+    env: java
+    plan: free
+    buildCommand: ./mvn clean package
+    startCommand: ./start.sh
+    envVars:
+      - key: JAVA_VERSION
+        value: 23
+    autoDeploy: true
